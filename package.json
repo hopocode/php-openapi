@@ -1,0 +1,16 @@
+{
+  "name": "@hopo/openapi",
+  "version": "5.0.0",
+  "scripts": {
+    "docker:build": "docker build -t php_openapi tests/config",
+    "docker:install": "docker run -it -v ${PWD}/:/app php_openapi composer install",
+    "docker:fixcode:install": "docker run -it -v ${PWD}/:/app/src -v ${PWD}/fixer:/app php_openapi composer create-project nette/coding-standard /app/nette-coding-standard",
+    "docker:fixcode:run": "docker run -it -v ${PWD}/:/app/src -v ${PWD}/fixer:/app php_openapi nette-coding-standard/ecs src --fix",
+    "ssh": "docker run -it -v ${PWD}/:/app php_openapi bash",
+    "test": "docker run -it -v ${PWD}/:/app php_openapi sh tests/tests.sh",
+    "test:watch": "docker run -it -v ${PWD}/:/app rest_server_test sh tests/tests-watch.sh"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.18.9"
+  }
+}

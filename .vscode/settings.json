@@ -1,0 +1,11 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [160],
+    "php.validate.enable": false,
+    "php.suggest.basic": false,
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/.git": false,
+        "**/*{.jpg,.png,.gif,.webp,.jpeg}": false
+    }
+}

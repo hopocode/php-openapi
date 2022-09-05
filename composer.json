@@ -1,0 +1,38 @@
+{
+    "name": "hopo/openapi",
+    "description": "Openapi PHP utils",
+    "keywords": [
+        "rest",
+        "openapi"
+    ],
+    "homepage": "https://github.com/hopocode/php-openapi",
+    "license": [
+        "BSD-3-Clause",
+        "GPL-2.0-only",
+        "GPL-3.0-only"
+    ],
+    "authors": [
+        {
+            "name": "Honza Pospisil",
+            "homepage": "https://honzapospisil.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1 <8.2",
+        "nette/http": "^4.0",
+        "nette/utils": "^4.0"
+    },
+    "require-dev": {
+        "nette/tester": "^2.4",
+        "nette/finder": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "scripts": {
+        "tester": "tester tests -s"
+    }
+}
