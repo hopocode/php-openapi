@@ -4,7 +4,7 @@
   "scripts": {
     "docker:build": "docker build -t php_openapi tests/config",
     "docker:install": "docker run -it -v ${PWD}/:/app php_openapi composer install",
-    "ssh": "docker run -it -v ${PWD}/:/app php_openapi bash",
+    "docker:ssh": "docker run -it -v ${PWD}/:/app php_openapi bash",
     "test": "docker run -it -v ${PWD}/:/app php_openapi sh tests/tests.sh",
     "test:watch": "docker run -it -v ${PWD}/:/app rest_server_test sh tests/tests-watch.sh"
   },

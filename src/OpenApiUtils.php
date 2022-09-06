@@ -67,4 +67,16 @@ class OpenApiUtils
             return $value;
         }
     }
+
+    public static function getDefaultParametersValues(OpenApiNode $spec, string $in): array
+    {
+        $params = $spec['parameters'] ?? [];
+        $ret = [];
+        foreach ($params as $param) {
+            if ($param['in'] === $in && isset($param['schema']['default'])) {
+                $ret[$param['name']] = $param['schema']['default'];
+            }
+        }
+        return $ret;
+    }
 }
