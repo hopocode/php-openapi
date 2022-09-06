@@ -2,9 +2,15 @@
 
 declare(strict_types=1);
 
-function test(string $description, Closure $fn): void
+function describe(string $description, Closure $fn): void
 {
     echo $description, "\n";
+    $fn();
+}
+
+function test(string $description, Closure $fn): void
+{
+    echo '   ' . $description, "\n";
     $fn();
 }
 
