@@ -18,8 +18,10 @@ class OpenApiNode implements ArrayAccess, Countable, Iterator
     private $resolved = [];
     private $resolvedDone = false;
 
-    public function __construct(private array $root, private array $spec)
-    {
+    public function __construct(
+        private array $root,
+        private array $spec,
+    ) {
         $this->position = key($this->root);
     }
 
