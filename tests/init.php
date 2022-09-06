@@ -2,22 +2,7 @@
 
 declare(strict_types=1);
 
-use PhpJest\JestExpect;
-use Tester\Environment;
+include_once __DIR__ . '/load.php';
+include_once __DIR__ . '/functionas.php';
 
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/JestExpect.php';
-require __DIR__ . '/TestUtils.php';
-
-Environment::setup();
-
-function test(string $description, Closure $fn): void
-{
-    echo $description, "\n";
-    $fn();
-}
-
-function expect($result)
-{
-    return new JestExpect($result);
-}
+Tester\Environment::setup();
