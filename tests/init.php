@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Tester\Environment;
 use Tester\Assert;
+use Tester\Environment;
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/TestUtils.php';
@@ -25,6 +25,11 @@ class JestExpect
     public function toBe($val)
     {
         Assert::same($this->testResult, $val);
+    }
+
+    public function toEqual($val)
+    {
+        Assert::equal($this->testResult, $val);
     }
 }
 
