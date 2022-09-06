@@ -31,6 +31,11 @@ class JestExpect
     {
         Assert::equal($this->testResult, $val);
     }
+
+    public function toBeInstanceOf(string $type)
+    {
+        Assert::true($this->testResult instanceof $type);
+    }
 }
 
 function expect($result)

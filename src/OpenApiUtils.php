@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Copyright (c) Honza Pospisil (https://www.honzapospisil.com)
+ */
+
 declare(strict_types=1);
 
 namespace Hopo\OpenApi;
@@ -9,6 +13,7 @@ use Nette\StaticClass;
 class OpenApiUtils
 {
     use StaticClass;
+
     private const DOT = '______DOT______';
 
     public static function findReference(string $referenceName, array $rootApi)

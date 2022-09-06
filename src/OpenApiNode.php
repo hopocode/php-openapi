@@ -1,27 +1,25 @@
 <?php
 
+/**
+ * Copyright (c) Honza Pospisil (https://www.honzapospisil.com)
+ */
+
 declare(strict_types=1);
 
 namespace Hopo\OpenApi;
 
 use ArrayAccess;
-use ArrayIterator;
 use Countable;
 use Iterator;
-use IteratorAggregate;
 
 class OpenApiNode implements ArrayAccess, Countable, Iterator
 {
-    /**
-     * @var Array $resolved
-     */
+    /** @var Array $resolved */
     private $resolved = [];
     private $resolvedDone = false;
-    private $position;
 
     public function __construct(private array $root, private array $spec)
     {
-        ///$this->resolved = $this;
         $this->position = key($this->root);
     }
 
@@ -87,8 +85,6 @@ class OpenApiNode implements ArrayAccess, Countable, Iterator
             $this->resolvedDone = true;
         }
     }
-
-    /******** Iterator ********* */
 
     public function current()
     {
